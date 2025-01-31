@@ -5,7 +5,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: url('/src/imagens/maymay.jpg') no-repeat center center/cover;
+	background: url(../imagens/maymay.jpg) no-repeat center center/cover;
 	margin: 0;
 	overflow: hidden;
 	font-family: 'Dancing Script', cursive;
