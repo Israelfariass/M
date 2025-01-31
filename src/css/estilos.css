@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+        
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: url('/src/imagens/maymay.jpg') no-repeat center center/cover;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'Dancing Script', cursive;
+}
+.container {
+	position: relative;
+	text-align: center;
+}
+.heart {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	background-color: #007BFF;
+	transform: rotate(-45deg);
+	margin: 50px auto;
+	animation: fadeIn 2s ease-in-out, pulse 2s infinite;
+	cursor: pointer;
+	box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+.heart::before,
+.heart::after {
+	content: "";
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background-color: #007BFF;
+	border-radius: 50%;
+}
+.heart::before {
+	top: -75px;
+	left: 0;
+}
+.heart::after {
+	top: 0;
+	left: 75px;
+}
+.message {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+	color: white;
+	opacity: 0;
+	transition: opacity 1.5s ease-in-out;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 12px;
+	border-radius: 12px;
+	max-width: 80%;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.hidden-image {
+	display: none;
+	width: 200px;
+	height: auto;
+	margin-top: 20px;
+	animation: fadeIn 2s ease-in-out;
+	border-radius: 15px;
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes pulse {
+	0% { transform: scale(1) rotate(-45deg); }
+	50% { transform: scale(1.1) rotate(-45deg); }
+	100% { transform: scale(1) rotate(-45deg); }
+}
