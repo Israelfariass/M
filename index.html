@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para minha Princesa</title>
-    <link rel="stylesheet" href="src/css/reset.css">
+    <title>Feliz Aniversário 💙</title>
+    <link rel="stylesheet" href="src/css/fontes.css">
     <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="heart" id="heart"></div>
-        <div class="image-container">
-            <img src="src/imagens/Kuromi.jpg" alt="Kuromi" class="hidden-image" id="hiddenImage">
-            <div class="message" id="message">Feliz Aniversário, Minha Princesa! 💙</div>
+        <!-- Coração Azul (Botão) -->
+        <div class="heart" onclick="revealMessage()">💙</div>
+
+        <!-- Cartinha com a imagem da Kuromi e o texto dentro -->
+        <div class="card-container">
+            <img src="src/imagens/Kuromi.jpg" alt="Kuromi" class="kuromi-card">
+            <div class="message-content">
+                <p>
+                    Feliz aniversário, meu docinho.
+
+                    Quero e espero que hoje seja o melhor dia para você, porque uma mulher incrível como você merece
+                    isso e muito mais. Afinal, não é todo dia que uma anciã completa 333 milênios antes de Cristo, né?
+                    KKKKK 💙
+
+                    Você é a minha oração mais linda e o meu sorriso mais sincero. Sinto sua falta todos os dias… Sonho
+                    com você, lembro das nossas conversas e fico rindo sozinho. Mesmo de longe, você me dá forças para
+                    continuar. Sempre que penso em desistir de tudo, vem sua vozinha na minha cabeça dizendo que eu
+                    posso mais – e assim eu sigo.
+
+                    Obrigado por ser essa mulher maravilhosa que você é, Maymay. 💙 Cuido de você de longe, e meu anjo
+                    da guarda ainda está aí, ajudando o seu.
+
+                    E pra deixar claro: eu nunca fiquei brabo ou chateado com essa distância. Eu entendo os motivos, e
+                    nas minhas orações sempre peço que Deus coloque pessoas boas ao seu lado. Que você nunca perca esse
+                    brilho tão lindo que tem… Seu sorriso vale muito para mim.
+
+                    Por favor, não esquece que você tem esse lugar aqui. 💙
+
+                    Aproveite seu dia, minha princesa. 💜 Eu te amo muito. Juro pela minha garra que sempre estarei aqui
+                    para qualquer coisa que precisar. 💙🐻
+                </p>
+            </div>
         </div>
+
+        <!-- Botão de Música -->
+        <button id="musicControl" onclick="toggleMusic()">🎵 Pausar Música</button>
+        <audio id="backgroundMusic" loop>
+            <source src="src/musica/Matuê 04AM.mp3" type="audio/mpeg">
+        </audio>
     </div>
     <script src="src/js/index.js"></script>
 </body>
+
 </html>

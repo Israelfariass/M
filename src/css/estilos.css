@@ -1,15 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-        
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background: url(../imagens/maymay.jpg) no-repeat center center/cover;
+	background: url(../imagens/maymay.jpg) no-repeat center center fixed;
+	background-size: cover;
+	font-family: 'Arial', sans-serif;
+	color: white;
+	text-align: center;
 	margin: 0;
+	padding: 0;
 	overflow: hidden;
-	font-family: 'Dancing Script', cursive;
 }
+
+
+/* Fonte e Estilo Geral */
+body {
+    background-color: #000;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .container {
 	position: relative;
 	text-align: center;
@@ -20,8 +31,8 @@ body {
 	height: 150px;
 	background-color: #007BFF;
 	transform: rotate(-45deg);
-	margin: 50px auto;
-	animation: fadeIn 2s ease-in-out, pulse 2s infinite;
+	margin: 55px auto;
+	animation: fadeIn 1s ease-in-out, pulse 1s infinite;
 	cursor: pointer;
 	box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
 }
@@ -32,7 +43,7 @@ body {
 	width: 150px;
 	height: 150px;
 	background-color: #007BFF;
-	border-radius: 50%;
+	border-radius: 60%;
 }
 .heart::before {
 	top: -75px;
@@ -42,30 +53,7 @@ body {
 	top: 0;
 	left: 75px;
 }
-.message {
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 20px;
-	color: white;
-	opacity: 0;
-	transition: opacity 1.5s ease-in-out;
-	background: rgba(0, 0, 0, 0.6);
-	padding: 12px;
-	border-radius: 12px;
-	max-width: 80%;
-	text-align: center;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.hidden-image {
-	display: none;
-	width: 200px;
-	height: auto;
-	margin-top: 20px;
-	animation: fadeIn 2s ease-in-out;
-	border-radius: 15px;
-}
+
 @keyframes fadeIn {
 	from { opacity: 0; }
 	to { opacity: 1; }
@@ -74,4 +62,93 @@ body {
 	0% { transform: scale(1) rotate(-45deg); }
 	50% { transform: scale(1.1) rotate(-45deg); }
 	100% { transform: scale(1) rotate(-45deg); }
+}
+
+/* Cartinha com o Texto Dentro da Kuromi */
+.card-container {
+    position: relative;
+    display: none;
+    width: 350px;
+    height: auto;
+    text-align: center;
+}
+
+/* Imagem da Kuromi */
+.kuromi-card {
+    width: 110%;
+    border-radius: 18px;
+}
+
+/* Texto Dentro da Kuromi */
+.message-content {
+    position: absolute;
+    top: 31%;
+    left: 55%;
+    transform: translate(-50%, -30%);
+    width: 85%;
+    max-height: 350px;
+    overflow-y: auto;
+    background: rgba(238, 140, 217, 0.192);
+    padding: 20px;
+    border-radius: 27px;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
+	
+}
+
+/* Rolagem do Texto */
+.message-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.message-content::-webkit-scrollbar-thumb {
+    background-color: #A78BFA;
+    border-radius: 10px;
+}
+
+/* Botão de Música */
+#musicControl {
+    margin-top: 15px;
+    background-color: #A78BFA;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#musicControl:hover {
+    background-color: #6D28D9;
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+    .message-content {
+        font-size: 12px;
+        padding: 9px;
+    }
+}
+/* Efeito de Fade-in para a cartinha */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Aplicando a animação à cartinha */
+.card-container {
+    position: relative;
+    display: none;
+    width: 310px;
+    height: auto;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
 }

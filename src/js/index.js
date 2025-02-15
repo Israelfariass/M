@@ -1,13 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let heart = document.getElementById("heart");
-    let message = document.getElementById("message");
-    let hiddenImage = document.getElementById("hiddenImage");
+// Controle de música
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicControl");
 
-    heart.addEventListener("click", function() {
-        heart.style.opacity = "0"; // Some com o coração
-        hiddenImage.style.display = "block"; // Mostra a imagem primeiro
-        setTimeout(() => {
-            message.style.opacity = "1"; // Depois, mostra o texto
-        }, 1000);
-    });
-});
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicButton.textContent = "🎵 Pausar Música";
+    } else {
+        music.pause();
+        musicButton.textContent = "🎵 Tocar Música";
+    }
+}
+
+// Revelação da Mensagem
+function revealMessage() {
+    const heart = document.querySelector(".heart");
+    const card = document.querySelector(".card-container");
+
+    heart.style.opacity = "0";
+    setTimeout(() => {
+        heart.style.display = "none";
+        card.style.display = "block";
+    }, 500);
+}
